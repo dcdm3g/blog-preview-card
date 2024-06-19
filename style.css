@@ -1,0 +1,128 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --black: #111;
+  --white: #fff;
+  --yellow: #f4d04e;
+  --gray: #7f7f7f;
+}
+
+body {
+  min-height: 100vh;
+  background-color: var(--yellow);
+  display: grid;
+  place-content: center;
+  font-family: "Figtree", sans-serif;
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.card {
+  background-color: var(--white);
+  width: min(24rem, calc(100vw - 3rem));
+  border: solid 1px var(--black);
+  box-shadow: 8px 8px #000;
+  border-radius: 1.25rem;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1.5rem;
+  transition-property: box-shadow;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+.card:has(.card__title:hover) {
+  box-shadow: 16px 16px #000;
+}
+
+.card__image {
+  border-radius: 0.625rem;
+}
+
+.card__content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.75rem;
+}
+
+.card__category {
+  background-color: var(--yellow);
+  color: var(--black);
+  padding: 0.25rem 0.75rem;
+  border-radius: 0.25rem;
+  font-size: 0.75rem;
+  line-height: 1.5;
+  font-weight: 800;
+}
+
+.card__publish-date {
+  color: var(--black);
+  font-size: 0.75rem;
+  line-height: 1.5;
+  font-weight: 500;
+}
+
+.card__title {
+  color: var(--black);
+  font-size: 1.25rem;
+  line-height: 1.5;
+  font-weight: 800;
+  transition-property: color;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+.card__title:hover {
+  color: var(--yellow);
+}
+
+.card__description {
+  color: var(--gray);
+  font-size: 0.875rem;
+  line-height: 1.5;
+  font-weight: 500;
+}
+
+.card__author {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.ccard_author-image {
+  border-radius: 50%;
+}
+
+.card__author-name {
+  color: var(--black);
+  font-size: 0.875rem;
+  line-height: 1.5;
+  font-weight: 800;
+}
+
+@media (min-width: 640px) {
+  .card__category {
+    font-size: 0.875rem;
+  }
+
+  .card__publish-date {
+    font-size: 0.875rem;
+  }
+
+  .card__title {
+    font-size: 1.5rem;
+  }
+
+  .card__description {
+    font-size: 1rem;
+  }
+}
